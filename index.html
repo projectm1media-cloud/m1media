@@ -72,30 +72,17 @@ input{font-family:inherit;}
   justify-content:space-between;
 }
 .logo{
-  font-family:"League Spartan",sans-serif;
-  font-size:22px;
-  line-height:1;
-  font-weight:700;
-  letter-spacing:-.04em;
-  color:var(--m1-black);
   display:inline-flex;
   align-items:center;
-  gap:10px;
+  line-height:0;
 }
-.logo-mark{
-  width:28px;height:28px;
-  border-radius:8px;
-  background:var(--m1-blue);
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  color:#FFFFFF;
-  font-family:"League Spartan",sans-serif;
-  font-weight:800;
-  font-size:14px;
-  letter-spacing:0;
-  box-shadow:0 6px 16px rgba(6,102,243,.28);
+.logo-img{
+  height:34px;
+  width:auto;
+  display:block;
+  transition:opacity .2s ease;
 }
+.logo:hover .logo-img{opacity:.82;}
 .header-note{
   font-size:12.5px;
   color:var(--m1-gray);
@@ -113,36 +100,37 @@ input{font-family:inherit;}
 .header-note strong{color:var(--m1-black);font-weight:600;}
 
 /* ============================
-   PILL (shared)
+   EYEBROW (shared) — editorial, sin pill
 ============================ */
-.pill{
+.eyebrow{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  background:var(--m1-blue-soft);
-  color:var(--m1-blue);
+  gap:12px;
   font-family:"Inter",sans-serif;
   font-weight:600;
-  font-size:12px;
+  font-size:11.5px;
   text-transform:uppercase;
-  letter-spacing:.09em;
-  padding:7px 14px;
-  border-radius:100px;
+  letter-spacing:.16em;
+  color:var(--m1-blue);
 }
-.pill-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--m1-blue);
-  box-shadow:0 0 0 3px rgba(6,102,243,.15);
+.eyebrow::before{
+  content:"";
+  width:28px;height:1px;
+  background:currentColor;
+  opacity:.55;
 }
-.pill-dark{
-  background:rgba(255,255,255,.08);
-  color:var(--m1-blue-light);
-  border:1px solid rgba(255,255,255,.1);
-}
-.pill-dark .pill-dot{
-  background:var(--m1-blue-light);
-  box-shadow:0 0 0 3px rgba(79,147,255,.2);
-}
+.eyebrow-dark{color:var(--m1-blue-light);}
+
+/* legacy pill removed */
+.pill,.pill-dot{display:none !important;}
+
+/* eyebrow spacing dentro de section-heads */
+.problem-head .eyebrow{margin-bottom:26px;}
+.section-head .eyebrow{margin-bottom:22px;}
+.journey-head .eyebrow{margin-bottom:22px;}
+.about-copy .eyebrow{margin-bottom:22px;align-self:flex-start;}
+.faq-head .eyebrow{margin-bottom:22px;}
+.final .eyebrow{margin-bottom:28px;}
 
 /* ============================
    HERO
@@ -1084,27 +1072,37 @@ h1 .underline::after{
   .header-note strong{color:#13864A;font-weight:700;}
   .header-note .status{width:6px;height:6px;box-shadow:0 0 0 2px rgba(24,169,87,.2);}
   .header-note-extra{display:none;}
-  .logo{font-size:19px;}
-  .logo-mark{width:26px;height:26px;font-size:12.5px;}
+  .logo-img{height:28px;}
   .hero{padding:96px 0 68px;min-height:auto;}
   h1{font-size:clamp(34px,9vw,52px);}
   .hero-sub{font-size:16px;}
   .capture-form{
     flex-direction:column;
-    padding:6px;
-    gap:6px;
-    background:#FFFFFF;
-    border-radius:14px;
-    box-shadow:0 10px 24px rgba(10,10,10,.07);
+    padding:0;
+    gap:12px;
+    background:transparent;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+  }
+  .capture-form:focus-within{
+    border-color:transparent;
+    box-shadow:none;
   }
   .capture-form input[type="email"]{
-    padding:0 16px;
+    padding:0 18px;
     height:56px;
     font-size:16px;
     text-align:left;
-    background:#F6F7F9;
-    border-radius:10px;
-    border:1px solid transparent;
+    background:#FFFFFF;
+    border:1px solid var(--m1-border);
+    border-radius:12px;
+    box-shadow:0 6px 16px rgba(10,10,10,.05);
+    transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .capture-form input[type="email"]:focus{
+    border-color:var(--m1-blue);
+    box-shadow:0 6px 20px rgba(6,102,243,.14);
   }
   .capture-form input[type="email"]::placeholder{color:#6C717A;font-weight:500;}
   .capture-form button{
@@ -1112,7 +1110,8 @@ h1 .underline::after{
     justify-content:center;
     width:100%;
     font-size:16px;
-    border-radius:10px;
+    border-radius:12px;
+    box-shadow:0 10px 24px rgba(6,102,243,.26);
   }
   .capture-note{gap:14px;}
   .trust-strip-inner{flex-direction:column;align-items:flex-start;gap:10px;}
@@ -1251,9 +1250,8 @@ h1 .underline::after{
 
 <header class="site-header">
   <div class="container">
-    <a href="/" class="logo">
-      <span class="logo-mark">M1</span>
-      Media
+    <a href="/" class="logo" aria-label="M1 Media">
+      <img src="../../_BrandKIT/Logo M1 Media Lockup.png" alt="M1 Media" class="logo-img" />
     </a>
     <div class="header-note">
       <span class="status"></span>
@@ -1269,15 +1267,15 @@ h1 .underline::after{
 
       <div class="hero-copy">
         <div class="hero-tag">
-          <span class="pill"><span class="pill-dot"></span>Vídeo privado · 20 min · gratis</span>
+          <span class="eyebrow">Vídeo privado · 20 min · gratis</span>
         </div>
 
         <h1>
-          Cómo pasa un ecommerce de <span class="blue">facturar bien</span> a crecer en serio.
+          Tu ecommerce no está estancado por el presupuesto. Está estancado por <span class="blue underline">el sistema</span>.
         </h1>
 
         <p class="hero-sub">
-          Lo que separa a los que se estancan de los que escalan. <strong>No es el presupuesto. Es el sistema.</strong> Te enseñamos el nuestro en 20 minutos.
+          4 cuellos de botella explican el 90% del estancamiento entre <strong>8k y 40k al mes</strong>. El vídeo los desglosa — con los números y el marco que uso antes de aceptar un partner.
         </p>
 
         <div class="capture" id="capture-hero">
@@ -1292,7 +1290,7 @@ h1 .underline::after{
               aria-label="Email"
             />
             <button type="submit">
-              Ver el vídeo
+              Ver el diagnóstico
               <span class="arrow" aria-hidden="true">→</span>
             </button>
           </form>
@@ -1437,7 +1435,7 @@ h1 .underline::after{
 
       <div class="problem-head">
         <div>
-          <span class="pill pill-dark reveal"><span class="pill-dot"></span>Antes del vídeo, el diagnóstico</span>
+          <span class="eyebrow eyebrow-dark reveal">Antes del vídeo, el diagnóstico</span>
           <h2 class="reveal reveal-delay-1">Si te suena alguna de estas, <span class="blue">no estás solo</span>.</h2>
         </div>
         <p class="problem-side reveal reveal-delay-2">
@@ -1479,7 +1477,7 @@ h1 .underline::after{
 <section class="solution">
   <div class="container">
     <div class="section-head reveal">
-      <span class="pill"><span class="pill-dot"></span>Qué hay dentro</span>
+      <span class="eyebrow">Qué hay dentro</span>
       <h2>20 minutos. Los 4 cuellos de botella <span class="blue">del estancamiento</span>.</h2>
       <p>El mismo diagnóstico que hago con las marcas que entran a trabajar conmigo. Útil tanto si decides contratarnos como si decides aplicarlo tú mismo.</p>
     </div>
@@ -1544,7 +1542,7 @@ h1 .underline::after{
   <div class="container">
     <div class="journey-inner">
       <div class="journey-head">
-        <span class="pill pill-dark reveal"><span class="pill-dot"></span>Cómo funciona</span>
+        <span class="eyebrow eyebrow-dark reveal">Cómo funciona</span>
         <h2 class="reveal reveal-delay-1">Tres pasos. <span class="blue">Cero fricción.</span></h2>
         <p class="reveal reveal-delay-2">Sin descargar nada, sin crear cuentas, sin agendar antes de ver si encaja.</p>
       </div>
@@ -1594,7 +1592,7 @@ h1 .underline::after{
       </aside>
 
       <div class="about-copy reveal reveal-delay-1">
-        <span class="pill"><span class="pill-dot"></span>Quién hay detrás</span>
+        <span class="eyebrow">Quién hay detrás</span>
         <h2>Menos clientes. <span class="blue">Más implicación.</span></h2>
         <p>M1 Media no funciona como una agencia que reparte tareas entre departamentos. Entramos en el negocio para entender qué está frenando el crecimiento y conectamos estrategia, adquisición, creatividad, email y datos alrededor de un mismo objetivo.</p>
         <div class="about-model">
@@ -1658,7 +1656,7 @@ h1 .underline::after{
   <div class="container">
     <div class="faq-inner">
       <div class="faq-head">
-        <span class="pill"><span class="pill-dot"></span>Preguntas honestas</span>
+        <span class="eyebrow">Preguntas honestas</span>
         <h2>Lo que seguramente te estás <span class="blue">preguntando</span>.</h2>
       </div>
 
@@ -1721,9 +1719,9 @@ h1 .underline::after{
 <section class="final">
   <div class="container">
     <div class="final-inner">
-      <span class="pill pill-dark reveal"><span class="pill-dot"></span>Último paso</span>
-      <h2 class="reveal reveal-delay-1">Antes de invertir otro euro en crecer, <span class="blue">mira cómo pensamos</span> nosotros.</h2>
-      <p class="reveal reveal-delay-2">20 minutos de vídeo privado. El mismo marco que compartimos cuando una marca llega hasta aquí. Sin promesas vacías, sin oferta prefabricada.</p>
+      <span class="eyebrow eyebrow-dark reveal">Último paso</span>
+      <h2 class="reveal reveal-delay-1">Antes de subir presupuesto otra vez, <span class="blue">mira dónde está el cuello de botella</span>.</h2>
+      <p class="reveal reveal-delay-2">20 minutos. 4 problemas concretos. El mismo diagnóstico que hago con las marcas antes de aceptarlas. Sin pitch, sin oferta prefabricada.</p>
 
       <div class="capture reveal reveal-delay-3" id="capture-final">
         <form class="capture-form" data-form="final" novalidate>
@@ -1737,7 +1735,7 @@ h1 .underline::after{
             aria-label="Email"
           />
           <button type="submit">
-            Ver el vídeo
+            Ver el diagnóstico
             <span class="arrow" aria-hidden="true">→</span>
           </button>
         </form>
