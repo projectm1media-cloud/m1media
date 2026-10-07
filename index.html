@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+<meta name="theme-color" content="#FFFFFF" />
+<meta name="description" content="Los 4 cuellos de botella que estancan a los ecommerce entre 8k y 40k al mes. Vídeo privado de 20 minutos — sin pitch." />
+<meta property="og:title" content="M1 Media · El diagnóstico del ecommerce que no crece" />
+<meta property="og:description" content="Vídeo privado de 20 min: los 4 cuellos de botella que explican el 90% del estancamiento entre 8k y 40k al mes." />
+<meta property="og:type" content="website" />
+<meta name="robots" content="noindex, nofollow" />
+<title>M1 Media · El sistema de crecimiento para ecommerce</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=League+Spartan:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+:root{
+  --m1-blue:#0666F3;
+  --m1-blue-dark:#0056D6;
+  --m1-blue-soft:#EAF2FF;
+  --m1-blue-light:#4F93FF;
+  --m1-black:#0A0A0A;
+  --m1-gray:#666B73;
+  --m1-gray-soft:#8A8F97;
+  --m1-bg:#FFFFFF;
+  --m1-soft:#F6F7F9;
+  --m1-border:#E6E8EC;
+  --m1-grid:#F1F3F6;
+  --m1-success:#18A957;
+  --container:1200px;
+  --radius:14px;
+  --radius-lg:20px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
+  color:var(--m1-black);
+  background:var(--m1-bg);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+a{color:inherit;text-decoration:none;}
+button,a,input{-webkit-tap-highlight-color:transparent;}
+img,svg{display:block;max-width:100%;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+input{font-family:inherit;}
+::selection{background:rgba(6,102,243,.18);color:var(--m1-black);}
+
+.container{
+  width:min(calc(100% - 48px), var(--container));
+  margin:0 auto;
+}
+
+/* ============================
+   HEADER — solo logo
+============================ */
+.site-header{
+  position:absolute;
+  top:0;left:0;right:0;
+  z-index:10;
+  padding:26px 0;
+}
+.site-header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-family:"League Spartan",sans-serif;
+  font-size:22px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:-.04em;
+  color:var(--m1-black);
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+.logo-mark{
+  width:28px;height:28px;
+  border-radius:8px;
+  background:var(--m1-blue);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#FFFFFF;
+  font-family:"League Spartan",sans-serif;
+  font-weight:800;
+  font-size:14px;
+  letter-spacing:0;
+  box-shadow:0 6px 16px rgba(6,102,243,.28);
+}
+.header-note{
+  font-size:12.5px;
+  color:var(--m1-gray);
+  font-weight:500;
+  letter-spacing:.01em;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.header-note .status{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--m1-success);
+  box-shadow:0 0 0 3px rgba(24,169,87,.18);
+}
+.header-note strong{color:var(--m1-black);font-weight:600;}
+
+/* ============================
+   PILL (shared)
+============================ */
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:var(--m1-blue-soft);
+  color:var(--m1-blue);
+  font-family:"Inter",sans-serif;
+  font-weight:600;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  padding:7px 14px;
+  border-radius:100px;
+}
+.pill-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--m1-blue);
+  box-shadow:0 0 0 3px rgba(6,102,243,.15);
+}
+.pill-dark{
+  background:rgba(255,255,255,.08);
+  color:var(--m1-blue-light);
+  border:1px solid rgba(255,255,255,.1);
+}
+.pill-dark .pill-dot{
+  background:var(--m1-blue-light);
+  box-shadow:0 0 0 3px rgba(79,147,255,.2);
+}
+
+/* ============================
+   HERO
+============================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:132px 0 90px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(230,232,236,.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(230,232,236,.5) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse at 55% 45%, black 10%, transparent 70%);
+  -webkit-mask-image:radial-gradient(ellipse at 55% 45%, black 10%, transparent 70%);
+  opacity:.75;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  top:8%;
+  right:-18%;
+  width:720px;
+  height:720px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(6,102,243,.12) 0%, rgba(6,102,243,0) 70%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:72px;
+  align-items:center;
+}
+.hero-copy{max-width:600px;}
+
+.hero-tag{
+  margin-bottom:26px;
+  opacity:0;transform:translateY(10px);
+  animation:fadeUp .6s ease .1s forwards;
+}
+
+h1{
+  font-family:"League Spartan",sans-serif;
+  font-size:clamp(44px,5.4vw,74px);
+  line-height:.95;
+  letter-spacing:-.045em;
+  font-weight:650;
+  color:var(--m1-black);
+  opacity:0;transform:translateY(20px);
+  animation:fadeUp .72s cubic-bezier(.2,.75,.25,1) .18s forwards;
+}
+h1 .blue{color:var(--m1-blue);}
+h1 .underline{
+  position:relative;
+  white-space:nowrap;
+}
+h1 .underline::after{
+  content:"";
+  position:absolute;
+  left:0;right:0;bottom:3px;
+  height:11px;
+  background:rgba(6,102,243,.16);
+  z-index:-1;
+  border-radius:3px;
+}
+
+.hero-sub{
+  margin-top:24px;
+  color:var(--m1-gray);
+  font-size:18px;
+  line-height:1.62;
+  max-width:530px;
+  opacity:0;transform:translateY(18px);
+  animation:fadeUp .68s ease .32s forwards;
+}
+.hero-sub strong{color:var(--m1-black);font-weight:600;}
+
+/* FORM */
+.capture{
+  margin-top:34px;
+  opacity:0;transform:translateY(16px);
+  animation:fadeUp .66s ease .46s forwards;
+}
+.capture-form{
+  display:flex;
+  gap:8px;
+  background:#FFFFFF;
+  border:1px solid var(--m1-border);
+  border-radius:12px;
+  padding:7px;
+  max-width:520px;
+  box-shadow:0 10px 30px rgba(10,10,10,.05);
+  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.capture-form:focus-within{
+  border-color:var(--m1-blue);
+  box-shadow:0 10px 30px rgba(6,102,243,.14);
+}
+.capture-form.shake{animation:shake .4s ease;}
+.capture-form input[type="email"]{
+  flex:1;min-width:0;
+  background:transparent;border:0;outline:0;
+  padding:0 14px;
+  height:50px;
+  font-size:15px;
+  color:var(--m1-black);
+}
+.capture-form input::placeholder{color:#6C717A;font-weight:500;}
+.capture-form button{
+  height:50px;
+  padding:0 22px;
+  background:var(--m1-blue);
+  color:#FFFFFF;
+  font-weight:600;font-size:15px;
+  border-radius:8px;
+  display:inline-flex;align-items:center;gap:8px;
+  white-space:nowrap;
+  transition:background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.capture-form button:hover{
+  background:var(--m1-blue-dark);
+  box-shadow:0 10px 24px rgba(6,102,243,.28);
+  transform:translateY(-1px);
+}
+.capture-form button:active{transform:translateY(0);}
+.capture-form .arrow{transition:transform .2s ease;}
+.capture-form button:hover .arrow{transform:translateX(3px);}
+
+.capture-note{
+  margin-top:16px;
+  display:flex;align-items:center;gap:18px;
+  font-size:13px;color:var(--m1-gray);
+  flex-wrap:wrap;
+}
+.capture-note span{display:inline-flex;align-items:center;gap:6px;}
+.capture-note svg{width:14px;height:14px;color:var(--m1-success);}
+
+.success-state{
+  display:none;
+  background:var(--m1-blue-soft);
+  border:1px solid #BFD5FA;
+  border-radius:12px;
+  padding:18px 20px;
+  max-width:520px;
+}
+.success-state.active{display:block;animation:fadeUp .4s ease;}
+.success-state strong{
+  display:flex;align-items:center;gap:10px;
+  color:var(--m1-blue);
+  font-family:"League Spartan",sans-serif;
+  font-size:17px;font-weight:650;letter-spacing:-.01em;
+}
+.success-state strong svg{width:18px;height:18px;}
+.success-state p{
+  margin-top:6px;
+  color:#1E3A6B;
+  font-size:14px;line-height:1.55;
+}
+.capture-form.hidden{display:none;}
+
+/* ============================
+   DASHBOARD (hero right)
+============================ */
+.dash-wrap{
+  position:relative;
+  width:100%;
+  opacity:0;transform:translateY(24px) scale(.98);
+  animation:visualIn .9s cubic-bezier(.2,.75,.2,1) .5s forwards;
+}
+.dash-glow{
+  position:absolute;
+  inset:12% 10%;
+  background:rgba(6,102,243,.12);
+  filter:blur(72px);
+  border-radius:50%;
+  z-index:-1;
+}
+.dash{
+  position:relative;
+  background:rgba(255,255,255,.95);
+  border:1px solid var(--m1-border);
+  border-radius:18px;
+  box-shadow:0 30px 80px rgba(10,10,10,.09),
+             0 1px 0 rgba(255,255,255,.8) inset;
+  padding:22px;
+  overflow:hidden;
+}
+.dash::before{
+  content:"";
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(230,232,236,.44) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(230,232,236,.44) 1px, transparent 1px);
+  background-size:42px 42px;opacity:.45;
+}
+.dash-inner{position:relative;z-index:2;}
+
+.dash-top{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:14px;
+}
+.dash-kicker{
+  font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:#8D929B;font-weight:700;
+}
+.dash-period{
+  font-size:10.5px;color:#8D929B;font-weight:600;
+  letter-spacing:.02em;
+}
+
+.rev-card{
+  border:1px solid var(--m1-border);
+  border-radius:14px;
+  background:rgba(255,255,255,.9);
+  padding:18px 20px 10px;
+  position:relative;overflow:hidden;
+}
+.rev-label{
+  font-size:12px;color:#7A7F87;font-weight:600;
+}
+.rev-value{
+  font-family:"League Spartan",sans-serif;
+  font-size:40px;line-height:1;letter-spacing:-.045em;
+  margin-top:5px;font-weight:650;
+}
+.rev-change{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-top:7px;color:var(--m1-success);
+  font-size:12px;font-weight:700;
+}
+.rev-change svg{width:11px;height:11px;}
+
+.chart{width:100%;height:140px;margin-top:8px;overflow:visible;}
+.chart-grid line{stroke:#EEF0F3;stroke-width:1;}
+.chart-area{fill:url(#areaGrad);opacity:.78;}
+.chart-line{
+  fill:none;stroke:var(--m1-blue);stroke-width:2.5;
+  stroke-linecap:round;stroke-linejoin:round;
+  stroke-dasharray:700;stroke-dashoffset:700;
+  animation:drawLine 1.4s ease .9s forwards;
+}
+.chart-dot{
+  fill:#fff;stroke:var(--m1-blue);stroke-width:2.5;
+  opacity:0;animation:dotIn .3s ease 2.1s forwards;
+}
+
+.stats{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:10px;margin-top:12px;
+}
+.stat{
+  background:rgba(255,255,255,.9);
+  border:1px solid var(--m1-border);
+  border-radius:12px;padding:14px;
+}
+.stat-title{
+  font-size:11px;color:#7A7F87;font-weight:600;margin-bottom:6px;
+}
+.stat-value{
+  font-family:"League Spartan",sans-serif;
+  font-size:24px;line-height:1;font-weight:650;letter-spacing:-.03em;
+}
+.stat-change{
+  color:var(--m1-success);font-size:10px;font-weight:700;margin-top:5px;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.stat-change svg{width:9px;height:9px;}
+
+.system{
+  margin-top:20px;
+  border-top:1px solid var(--m1-border);
+  padding-top:20px;
+}
+.system-title{
+  display:flex;justify-content:space-between;
+  align-items:center;margin-bottom:20px;
+}
+.system-title strong{
+  font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--m1-black);font-weight:700;
+}
+.system-title span{font-size:10.5px;color:#8A8F97;font-weight:600;}
+
+.nodes{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  position:relative;gap:0;
+}
+.nodes::before{
+  content:"";position:absolute;
+  left:12.5%;right:12.5%;top:8px;
+  height:1px;background:#DDE1E6;
+}
+.nodes-progress{
+  position:absolute;left:12.5%;top:8px;
+  width:0;height:1px;background:var(--m1-blue);
+  animation:progLine 1.3s ease 1.4s forwards;
+}
+.node{
+  position:relative;text-align:center;z-index:2;padding:0 4px;
+}
+.node-dot{
+  width:17px;height:17px;margin:0 auto 10px;
+  border-radius:50%;background:#fff;
+  border:2px solid #CCD1D7;
+  transition:.3s ease;position:relative;
+}
+.node.active .node-dot{
+  border-color:var(--m1-blue);
+  box-shadow:0 0 0 5px rgba(6,102,243,.08);
+}
+.node.active .node-dot::after{
+  content:"";position:absolute;
+  width:5px;height:5px;background:var(--m1-blue);
+  border-radius:50%;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+}
+.node-label{
+  font-size:10.5px;color:#6C717A;font-weight:600;
+}
+.node.active .node-label{color:var(--m1-black);}
+
+/* ============================
+   TRUST STRIP
+============================ */
+.trust-strip{
+  background:#FFFFFF;
+  border-top:1px solid var(--m1-border);
+  border-bottom:1px solid var(--m1-border);
+  padding:22px 0;
+  position:relative;
+  overflow:hidden;
+}
+.trust-strip-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;text-align:left;
+}
+.trust-left{
+  font-size:12px;color:var(--m1-gray-soft);
+  font-weight:600;text-transform:uppercase;letter-spacing:.09em;
+  flex-shrink:0;
+}
+.trust-right{
+  flex:1;
+  color:var(--m1-black);font-size:14.5px;line-height:1.5;
+  font-weight:500;
+}
+.trust-right strong{color:var(--m1-blue);font-weight:650;}
+
+/* ============================
+   PROBLEM (DARK)
+============================ */
+.problem{
+  background:var(--m1-black);
+  color:#FFFFFF;
+  padding:118px 0 110px;
+  position:relative;overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.problem::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:88px 88px;opacity:.4;
+}
+.problem::after{
+  content:"";position:absolute;
+  top:30%;left:-10%;width:460px;height:460px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(6,102,243,.12) 0%, transparent 70%);
+  pointer-events:none;
+}
+.problem-inner{position:relative;z-index:2;}
+
+.problem-head{
+  display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.65fr);
+  gap:72px;align-items:end;
+  margin-bottom:72px;
+}
+.problem-head .pill{margin-bottom:24px;}
+.problem-head h2{
+  font-family:"League Spartan",sans-serif;
+  font-size:clamp(42px,5vw,66px);
+  line-height:.98;letter-spacing:-.045em;
+  font-weight:650;
+}
+.problem-head h2 .blue{color:var(--m1-blue-light);}
+.problem-side{
+  padding-bottom:8px;
+  color:rgba(255,255,255,.6);
+  font-size:16px;line-height:1.65;
+  max-width:380px;
+}
+.problem-side strong{color:#FFFFFF;font-weight:600;}
+
+.pain-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.pain{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:28px;
+  transition:border-color .25s ease, background .25s ease, transform .25s ease;
+}
+.pain:hover{
+  border-color:rgba(79,147,255,.35);
+  background:rgba(79,147,255,.04);
+  transform:translateY(-3px);
+}
+.pain-icon{
+  width:38px;height:38px;
+  border-radius:10px;
+  background:rgba(79,147,255,.1);
+  color:var(--m1-blue-light);
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-bottom:18px;
+}
+.pain-icon svg{width:18px;height:18px;stroke-width:2;}
+.pain h3{
+  font-family:"League Spartan",sans-serif;
+  font-size:21px;line-height:1.2;letter-spacing:-.02em;
+  font-weight:650;margin-bottom:9px;color:#FFFFFF;
+}
+.pain p{
+  color:rgba(255,255,255,.56);
+  font-size:14.5px;line-height:1.6;
+}
+
+/* ============================
+   SOLUTION / WHAT YOU GET
+============================ */
+.solution{
+  padding:118px 0 100px;position:relative;
+}
+.section-head{
+  max-width:720px;margin:0 auto 66px;text-align:center;
+}
+.section-head .pill{margin-bottom:22px;}
+.section-head h2{
+  font-family:"League Spartan",sans-serif;
+  font-size:clamp(36px,4.4vw,60px);
+  line-height:.98;letter-spacing:-.04em;font-weight:650;
+}
+.section-head h2 .blue{color:var(--m1-blue);}
+.section-head p{
+  margin-top:18px;color:var(--m1-gray);
+  font-size:17px;line-height:1.6;
+}
+
+.solution-meta{
+  max-width:800px;margin:0 auto 44px;
+  display:flex;align-items:center;justify-content:center;
+  gap:28px;flex-wrap:wrap;
+}
+.sm-item{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13.5px;color:var(--m1-gray);font-weight:500;
+}
+.sm-item strong{color:var(--m1-black);font-weight:650;}
+.sm-item svg{width:16px;height:16px;color:var(--m1-blue);}
+
+.learn-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+}
+.learn-card{
+  background:#FFFFFF;
+  border:1px solid var(--m1-border);
+  border-radius:16px;padding:30px;
+  transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  position:relative;overflow:hidden;
+}
+.learn-card:hover{
+  transform:translateY(-3px);
+  border-color:#CDDDF9;
+  box-shadow:0 20px 40px rgba(6,102,243,.08);
+}
+.learn-card::before{
+  content:"";position:absolute;
+  top:0;left:0;width:100%;height:3px;
+  background:linear-gradient(90deg, var(--m1-blue), transparent);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .35s ease;
+}
+.learn-card:hover::before{transform:scaleX(1);}
+
+.learn-header{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:18px;
+}
+.learn-num{
+  font-family:"League Spartan",sans-serif;
+  font-size:15px;font-weight:700;color:var(--m1-blue);
+  background:var(--m1-blue-soft);
+  width:32px;height:32px;border-radius:9px;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+.learn-min{
+  font-size:11px;color:var(--m1-gray-soft);
+  font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+}
+.learn-card h3{
+  font-family:"League Spartan",sans-serif;
+  font-size:22px;line-height:1.18;letter-spacing:-.02em;
+  font-weight:650;margin-bottom:10px;
+}
+.learn-card p{
+  color:var(--m1-gray);
+  font-size:14.5px;line-height:1.6;
+}
+
+/* ============================
+   JOURNEY (DARK)
+============================ */
+.journey{
+  background:var(--m1-black);
+  color:#FFFFFF;
+  padding:120px 0;
+  position:relative;overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+.journey::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:88px 88px;opacity:.4;
+}
+.journey-inner{position:relative;z-index:2;}
+.journey-head{
+  max-width:780px;margin:0 auto 72px;text-align:center;
+}
+.journey-head .pill{margin-bottom:22px;}
+.journey-head h2{
+  font-family:"League Spartan",sans-serif;
+  font-size:clamp(36px,4.4vw,58px);
+  line-height:1;letter-spacing:-.04em;font-weight:650;
+}
+.journey-head h2 .blue{color:var(--m1-blue-light);}
+.journey-head p{
+  margin-top:18px;color:rgba(255,255,255,.62);
+  font-size:16.5px;line-height:1.62;
+}
+
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;position:relative;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:20px;overflow:hidden;
+}
+.steps::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:48px 48px;opacity:.6;
+}
+.step{
+  padding:40px 36px;
+  position:relative;z-index:2;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.step:last-child{border-right:0;}
+.step-num{
+  width:36px;height:36px;
+  border-radius:50%;background:transparent;
+  border:1px solid rgba(255,255,255,.2);
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--m1-blue-light);
+  font-family:"League Spartan",sans-serif;
+  font-size:12px;font-weight:700;
+  margin-bottom:22px;
+}
+.step h3{
+  font-family:"League Spartan",sans-serif;
+  font-size:22px;line-height:1.18;letter-spacing:-.02em;
+  font-weight:650;margin-bottom:10px;color:#FFFFFF;
+}
+.step p{
+  color:rgba(255,255,255,.55);
+  font-size:14.5px;line-height:1.6;
+}
+.step-meta{
+  margin-top:18px;
+  font-size:11.5px;
+  color:var(--m1-blue-light);
+  font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:7px;
+}
+.step-meta::before{
+  content:"";width:16px;height:1px;background:var(--m1-blue-light);
+}
+
+/* ============================
+   PARTNERSHIP / ABOUT
+============================ */
+.about{
+  padding:120px 0;position:relative;
+  background:#FFFFFF;
+  overflow:hidden;
+}
+.about-inner{
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:60px;align-items:stretch;
+}
+.quote-card{
+  position:relative;
+  background:var(--m1-black);
+  color:#FFFFFF;
+  border-radius:20px;
+  padding:40px 36px 36px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  overflow:hidden;
+  min-height:380px;
+}
+.quote-card::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:48px 48px;opacity:.5;
+}
+.quote-card::after{
+  content:"";position:absolute;
+  top:-20%;right:-20%;
+  width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle, rgba(6,102,243,.18) 0%, transparent 70%);
+  pointer-events:none;
+}
+.quote-label{
+  position:relative;z-index:2;
+  font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);font-weight:700;
+}
+.quote-body{
+  position:relative;z-index:2;
+  margin:28px 0 0;
+}
+.quote-body blockquote{
+  font-family:"League Spartan",sans-serif;
+  font-size:clamp(22px,2vw,28px);
+  line-height:1.2;letter-spacing:-.02em;
+  font-weight:600;color:#FFFFFF;
+  max-width:420px;
+}
+.quote-body blockquote .blue{color:var(--m1-blue-light);}
+.quote-author{
+  position:relative;z-index:2;
+  margin-top:28px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.quote-author strong{
+  display:block;
+  font-family:"League Spartan",sans-serif;
+  font-weight:650;font-size:17px;color:#FFFFFF;
+  letter-spacing:-.015em;
+}
+.quote-author small{
+  display:block;margin-top:3px;
+  color:rgba(255,255,255,.55);font-size:12.5px;font-weight:500;
+}
+
+.about-copy{display:flex;flex-direction:column;justify-content:center;}
+.about-copy .pill{margin-bottom:22px;align-self:flex-start;}
+.about-copy h2{
+  font-family:"League Spartan",sans-serif;
+  font-size:clamp(34px,4vw,54px);
+  line-height:.98;letter-spacing:-.04em;
+  font-weight:650;margin-bottom:22px;
+}
+.about-copy h2 .blue{color:var(--m1-blue);}
+.about-copy p{
+  color:var(--m1-gray);
+  font-size:16.5px;line-height:1.68;
+  margin-bottom:16px;max-width:540px;
+}
+.about-copy p strong{color:var(--m1-black);font-weight:600;}
+.about-model{
+  margin-top:18px;
+  padding-top:22px;
+  border-top:1px solid var(--m1-border);
+}
+.about-model-label{
+  font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--m1-gray-soft);font-weight:700;
+  margin-bottom:10px;
+}
+.about-model-text{
+  color:var(--m1-gray);
+  font-size:14.5px;line-height:1.65;max-width:540px;
+}
+
+/* ============================
+   CONTRAST — qué no vas a ver
+============================ */
+.contrast{
+  padding:110px 0;
+  background:#FFFFFF;
+  position:relative;
+  border-top:1px solid var(--m1-border);
+}
+.contrast-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  max-width:960px;margin:0 auto;
+  border:1px solid var(--m1-border);
+  border-radius:20px;
+  overflow:hidden;
+  background:#FFFFFF;
+}
+.contrast-col{
+  padding:40px;
+  position:relative;
+}
+.contrast-col:first-child{
+  background:#FBFCFD;
+  border-right:1px solid var(--m1-border);
+}
+.contrast-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11.5px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.09em;
+  margin-bottom:22px;
+}
+.contrast-col:first-child .contrast-label{color:var(--m1-gray);}
+.contrast-col:last-child .contrast-label{color:var(--m1-blue);}
+.contrast-label::before{
+  content:"";
+  width:16px;height:1px;background:currentColor;
+}
+.contrast-col h3{
+  font-family:"League Spartan",sans-serif;
+  font-size:22px;line-height:1.2;letter-spacing:-.02em;
+  font-weight:650;margin-bottom:18px;color:var(--m1-black);
+}
+.contrast-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.contrast-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:14.5px;line-height:1.55;color:var(--m1-black);
+}
+.contrast-col:first-child .contrast-list li{color:var(--m1-gray);}
+.contrast-list svg{
+  flex-shrink:0;width:18px;height:18px;margin-top:1px;
+}
+.contrast-col:first-child .contrast-list svg{color:#C4C8CF;}
+.contrast-col:last-child .contrast-list svg{color:var(--m1-blue);}
+
+/* ============================
+   FAQ
+============================ */
+.faq{
+  padding:120px 0;position:relative;
+  background:var(--m1-soft);
+  border-top:1px solid var(--m1-border);
+}
+.faq-inner{
+  max-width:860px;margin:0 auto;
+}
+.faq-head{text-align:center;margin-bottom:60px;}
+.faq-head .pill{margin-bottom:22px;}
+.faq-head h2{
+  font-family:"League Spartan",sans-serif;
+  font-size:clamp(34px,4vw,54px);
+  line-height:1;letter-spacing:-.04em;font-weight:650;
+}
+.faq-head h2 .blue{color:var(--m1-blue);}
+.faq-list{display:flex;flex-direction:column;gap:12px;}
+.faq-item{
+  background:#FFFFFF;
+  border:1px solid var(--m1-border);
+  border-radius:14px;
+  transition:border-color .2s ease, box-shadow .2s ease;
+  overflow:hidden;
+}
+.faq-item[open]{
+  border-color:#CDDDF9;
+  box-shadow:0 12px 30px rgba(6,102,243,.06);
+}
+.faq-item summary{
+  padding:22px 26px;
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;
+  font-family:"League Spartan",sans-serif;
+  font-size:17.5px;letter-spacing:-.015em;
+  font-weight:600;color:var(--m1-black);
+  list-style:none;
+}
+.faq-item summary::-webkit-details-marker{display:none;}
+.faq-icon{
+  flex-shrink:0;
+  width:28px;height:28px;border-radius:8px;
+  background:var(--m1-blue-soft);color:var(--m1-blue);
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:transform .25s ease, background .25s ease;
+}
+.faq-item[open] .faq-icon{transform:rotate(45deg);}
+.faq-icon svg{width:14px;height:14px;}
+.faq-body{
+  padding:0 26px 22px;
+  color:var(--m1-gray);
+  font-size:15px;line-height:1.65;
+}
+.faq-body strong{color:var(--m1-black);font-weight:600;}
+
+/* ============================
+   FINAL CTA (DARK)
+============================ */
+.final{
+  background:var(--m1-black);
+  color:#FFFFFF;
+  padding:130px 0 140px;
+  position:relative;overflow:hidden;
+}
+.final::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:88px 88px;opacity:.42;
+}
+.final::after{
+  content:"";position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  width:860px;height:860px;border-radius:50%;
+  background:radial-gradient(circle, rgba(6,102,243,.17) 0%, transparent 60%);
+  pointer-events:none;filter:blur(10px);
+}
+.final-inner{
+  position:relative;z-index:2;
+  max-width:760px;margin:0 auto;text-align:center;
+}
+.final .pill{margin-bottom:26px;}
+.final h2{
+  font-family:"League Spartan",sans-serif;
+  font-size:clamp(38px,4.8vw,66px);
+  line-height:.98;letter-spacing:-.04em;font-weight:650;
+}
+.final h2 .blue{color:var(--m1-blue-light);}
+.final p{
+  margin-top:22px;
+  color:rgba(255,255,255,.65);
+  font-size:17.5px;line-height:1.6;
+  max-width:560px;margin-left:auto;margin-right:auto;
+}
+.final .capture{margin:40px auto 0;}
+.final .capture-form{
+  margin:0 auto;
+  background:#FFFFFF;
+}
+.final .capture-note{
+  justify-content:center;color:rgba(255,255,255,.5);
+}
+.final .capture-note svg{color:var(--m1-blue-light);}
+
+/* ============================
+   FOOTER
+============================ */
+.site-footer{
+  background:var(--m1-black);
+  color:rgba(255,255,255,.5);
+  padding:28px 0;
+  border-top:1px solid rgba(255,255,255,.07);
+}
+.footer-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;flex-wrap:wrap;
+}
+.footer-inner small{font-size:12.5px;}
+.footer-links{display:flex;gap:22px;font-size:12.5px;}
+.footer-links a:hover{color:#FFFFFF;}
+
+/* ============================
+   ANIMATIONS
+============================ */
+@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+@keyframes visualIn{to{opacity:1;transform:translateY(0) scale(1);}}
+@keyframes drawLine{to{stroke-dashoffset:0;}}
+@keyframes dotIn{to{opacity:1;}}
+@keyframes progLine{to{width:75%;}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+@keyframes shake{
+  0%,100%{transform:translateX(0);}
+  25%{transform:translateX(-6px);}
+  75%{transform:translateX(6px);}
+}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s cubic-bezier(.2,.75,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.08s;}
+.reveal-delay-2{transition-delay:.16s;}
+.reveal-delay-3{transition-delay:.24s;}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 1024px){
+  .hero-grid{grid-template-columns:1fr;gap:56px;}
+  .problem-head{grid-template-columns:1fr;gap:32px;}
+  .about-inner{grid-template-columns:1fr;gap:48px;}
+  .about-card{max-width:none;aspect-ratio:16/9;}
+  .about-card-mid{padding:30px 0;}
+  .steps{grid-template-columns:1fr;}
+  .step{border-right:0;border-bottom:1px solid rgba(255,255,255,.08);}
+  .step:last-child{border-bottom:0;}
+}
+
+@media (max-width: 760px){
+  .container{width:min(calc(100% - 32px), var(--container));}
+  .site-header{padding:16px 0;}
+  .header-note{
+    font-size:10.5px;
+    gap:5px;
+    background:rgba(24,169,87,.09);
+    color:#13864A;
+    padding:5px 10px 5px 9px;
+    border-radius:100px;
+    font-weight:700;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .header-note strong{color:#13864A;font-weight:700;}
+  .header-note .status{width:6px;height:6px;box-shadow:0 0 0 2px rgba(24,169,87,.2);}
+  .header-note-extra{display:none;}
+  .logo{font-size:19px;}
+  .logo-mark{width:26px;height:26px;font-size:12.5px;}
+  .hero{padding:96px 0 68px;min-height:auto;}
+  h1{font-size:clamp(34px,9vw,52px);}
+  .hero-sub{font-size:16px;}
+  .capture-form{
+    flex-direction:column;
+    padding:6px;
+    gap:6px;
+    background:#FFFFFF;
+    border-radius:14px;
+    box-shadow:0 10px 24px rgba(10,10,10,.07);
+  }
+  .capture-form input[type="email"]{
+    padding:0 16px;
+    height:56px;
+    font-size:16px;
+    text-align:left;
+    background:#F6F7F9;
+    border-radius:10px;
+    border:1px solid transparent;
+  }
+  .capture-form input[type="email"]::placeholder{color:#6C717A;font-weight:500;}
+  .capture-form button{
+    height:56px;
+    justify-content:center;
+    width:100%;
+    font-size:16px;
+    border-radius:10px;
+  }
+  .capture-note{gap:14px;}
+  .trust-strip-inner{flex-direction:column;align-items:flex-start;gap:10px;}
+  .trust-left{font-size:11px;}
+  .trust-right{font-size:14px;}
+
+  .problem{padding:76px 0 68px;}
+  .problem-head{margin-bottom:48px;}
+  .problem-head h2{font-size:clamp(32px,8.5vw,44px);}
+  .problem-side{font-size:15px;}
+  .pain-grid{grid-template-columns:1fr;gap:14px;}
+  .pain{
+    padding:22px 22px 22px 24px;
+    border-left:3px solid rgba(79,147,255,.55);
+    border-radius:14px;
+  }
+  .pain-icon{margin-bottom:14px;width:34px;height:34px;}
+  .pain-icon svg{width:16px;height:16px;}
+  .pain h3{font-size:19px;line-height:1.25;}
+  .pain p{font-size:14px;}
+
+  .solution{padding:76px 0 68px;}
+  .section-head{margin-bottom:44px;}
+  .section-head h2{font-size:clamp(30px,8.5vw,40px);}
+  .section-head p{font-size:15.5px;}
+  .solution-meta{gap:16px 22px;margin-bottom:34px;}
+  .sm-item{font-size:13px;}
+  .learn-grid{grid-template-columns:1fr;gap:14px;}
+  .learn-card{padding:24px;}
+  .learn-card::before{transform:scaleX(1);height:2px;opacity:.4;}
+  .learn-header{margin-bottom:14px;}
+  .learn-num{width:34px;height:34px;font-size:14px;border-radius:10px;}
+  .learn-card h3{font-size:19px;line-height:1.22;}
+  .learn-card p{font-size:14.5px;}
+
+  .journey{padding:80px 0;}
+  .journey-head{margin-bottom:48px;}
+  .journey-head h2{font-size:clamp(30px,8.5vw,42px);}
+  .step{padding:30px 24px;}
+
+  .about{padding:72px 0;}
+  .about-inner{grid-template-columns:1fr;gap:28px;}
+  .about-copy h2{font-size:clamp(30px,8.5vw,40px);}
+  .about-copy p{font-size:15.5px;}
+  .quote-card{min-height:auto;padding:30px 24px 28px;order:2;}
+  .about-copy{order:1;}
+  .quote-body blockquote{font-size:21px;}
+
+  .contrast{padding:60px 0;}
+  .contrast-inner{grid-template-columns:1fr;}
+  .contrast-col{padding:30px 24px;}
+  .contrast-col:first-child{border-right:0;border-bottom:1px solid var(--m1-border);}
+  .contrast-col h3{font-size:19px;}
+  .contrast-list{margin-top:18px;}
+  .contrast-list li{font-size:14.5px;line-height:1.55;padding:4px 0;}
+
+  .faq{padding:76px 0;}
+  .faq-head{margin-bottom:40px;}
+  .faq-head h2{font-size:clamp(30px,8vw,40px);}
+  .faq-item summary{padding:22px 20px;font-size:15.5px;gap:12px;min-height:60px;}
+  .faq-body{padding:0 20px 22px;font-size:14.5px;line-height:1.6;}
+
+  .final{padding:84px 0 96px;}
+  .final h2{font-size:clamp(30px,8vw,44px);}
+  .final p{font-size:16px;}
+  .final .capture-form{flex-direction:column;}
+  .capture-note{justify-content:center;}
+
+  .footer-inner{flex-direction:column;text-align:center;gap:14px;}
+  .footer-links{justify-content:center;}
+
+  /* dashboard mobile tweaks */
+  .dash{padding:18px;}
+  .rev-value{font-size:34px;}
+  .stat-value{font-size:21px;}
+  .stats{gap:8px;}
+  .stat{padding:12px;}
+  .chart{height:120px;}
+}
+
+/* Phones pequeños — iPhone SE, Android base */
+@media (max-width: 420px){
+  .container{width:min(calc(100% - 28px), var(--container));}
+  .hero{padding:88px 0 60px;}
+  h1{font-size:clamp(32px,9.5vw,46px);letter-spacing:-.04em;}
+  .hero-sub{font-size:15px;}
+  .capture-form input[type="email"]{height:54px;font-size:15.5px;}
+  .capture-form button{height:54px;font-size:15.5px;}
+  .capture-note{gap:10px;font-size:12.5px;}
+
+  .trust-right{font-size:13.5px;}
+  .problem-head h2{letter-spacing:-.035em;}
+  .pain{padding:20px 20px 20px 22px;}
+  .pain h3{font-size:18px;}
+  .pain p{font-size:13.5px;}
+
+  .learn-card{padding:22px;}
+  .learn-card h3{font-size:18px;}
+  .section-head h2,.journey-head h2,.about-copy h2,.faq-head h2,.final h2{letter-spacing:-.035em;}
+
+  .step{padding:26px 22px;}
+  .step h3{font-size:20px;}
+
+  .quote-body blockquote{font-size:19px;}
+  .faq-item summary{font-size:15px;padding:20px 18px;min-height:58px;}
+  .faq-body{padding:0 18px 20px;font-size:14px;}
+
+  /* dashboard más compacto */
+  .dash{padding:16px;border-radius:16px;}
+  .rev-card{padding:16px 16px 8px;}
+  .rev-value{font-size:30px;}
+  .stat-value{font-size:19px;}
+  .stat-title{font-size:10.5px;}
+  .stat{padding:11px 10px;}
+  .chart{height:100px;}
+  .system{margin-top:16px;padding-top:16px;}
+  .node-label{font-size:10px;}
+}
+
+/* Safe-area insets para iPhones con home indicator */
+@supports (padding: max(0px)){
+  .site-footer{padding-bottom:max(28px, calc(28px + env(safe-area-inset-bottom)));}
+  .final{padding-bottom:max(96px, calc(96px + env(safe-area-inset-bottom)));}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="logo">
+      <span class="logo-mark">M1</span>
+      Media
+    </a>
+    <div class="header-note">
+      <span class="status"></span>
+      <strong>Plazas limitadas</strong><span class="header-note-extra"> · temporada abierta</span>
+    </div>
+  </div>
+</header>
+
+<!-- =============== HERO =============== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="hero-copy">
+        <div class="hero-tag">
+          <span class="pill"><span class="pill-dot"></span>Vídeo privado · 20 min · gratis</span>
+        </div>
+
+        <h1>
+          Cómo pasa un ecommerce de <span class="blue">facturar bien</span> a crecer en serio.
+        </h1>
+
+        <p class="hero-sub">
+          Lo que separa a los que se estancan de los que escalan. <strong>No es el presupuesto. Es el sistema.</strong> Te enseñamos el nuestro en 20 minutos.
+        </p>
+
+        <div class="capture" id="capture-hero">
+          <form class="capture-form" data-form="hero" novalidate>
+            <input
+              type="email"
+              name="email"
+              placeholder="Deja tu email"
+              required
+              autocomplete="email"
+              inputmode="email"
+              aria-label="Email"
+            />
+            <button type="submit">
+              Ver el vídeo
+              <span class="arrow" aria-hidden="true">→</span>
+            </button>
+          </form>
+          <div class="success-state" data-success="hero" role="status">
+            <strong>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Listo. Revisa tu bandeja.
+            </strong>
+            <p>Te hemos enviado el acceso. Si no aparece en 2 minutos, mira en Promociones o Spam.</p>
+          </div>
+        </div>
+
+        <div class="capture-note">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Acceso inmediato
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Sin spam
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Baja en 1 clic
+          </span>
+        </div>
+      </div>
+
+      <!-- DASHBOARD -->
+      <div class="dash-wrap">
+        <div class="dash-glow"></div>
+        <div class="dash">
+          <div class="dash-inner">
+
+            <div class="dash-top">
+              <span class="dash-kicker">M1 · Sistema de crecimiento</span>
+            </div>
+
+            <div class="rev-card">
+              <div class="rev-label">Facturación</div>
+              <div class="rev-value">€128.420</div>
+              <div class="rev-change">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l5-5 5 5M7 7l5-5 5 5"/></svg>
+                +24,8%
+              </div>
+
+              <svg class="chart" viewBox="0 0 500 160" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="areaGrad" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#0666F3" stop-opacity=".22"/>
+                    <stop offset="100%" stop-color="#0666F3" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g class="chart-grid">
+                  <line x1="0" y1="40" x2="500" y2="40"/>
+                  <line x1="0" y1="80" x2="500" y2="80"/>
+                  <line x1="0" y1="120" x2="500" y2="120"/>
+                </g>
+                <path class="chart-area" d="M0,122 L50,112 L100,118 L150,96 L200,100 L250,82 L300,74 L350,60 L400,52 L450,40 L500,28 L500,160 L0,160 Z"/>
+                <path class="chart-line" d="M0,122 L50,112 L100,118 L150,96 L200,100 L250,82 L300,74 L350,60 L400,52 L450,40 L500,28"/>
+                <circle class="chart-dot" cx="500" cy="28" r="5"/>
+              </svg>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <div class="stat-title">Inversión</div>
+                <div class="stat-value">€24,6K</div>
+                <div class="stat-change">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                  12,4%
+                </div>
+              </div>
+              <div class="stat">
+                <div class="stat-title">ROAS</div>
+                <div class="stat-value">4,8</div>
+                <div class="stat-change">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                  16,2%
+                </div>
+              </div>
+              <div class="stat">
+                <div class="stat-title">Conversión</div>
+                <div class="stat-value">4,2%</div>
+                <div class="stat-change">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                  0,6%
+                </div>
+              </div>
+            </div>
+
+            <div class="system">
+              <div class="system-title">
+                <strong>Sistema conectado</strong>
+                <span>Marco M1</span>
+              </div>
+              <div class="nodes">
+                <div class="nodes-progress"></div>
+                <div class="node active">
+                  <div class="node-dot"></div>
+                  <div class="node-label">Adquisición</div>
+                </div>
+                <div class="node active">
+                  <div class="node-dot"></div>
+                  <div class="node-label">Conversión</div>
+                </div>
+                <div class="node active">
+                  <div class="node-dot"></div>
+                  <div class="node-label">Retención</div>
+                </div>
+                <div class="node active">
+                  <div class="node-dot"></div>
+                  <div class="node-label">Escala</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============== TRUST STRIP =============== -->
+<section class="trust-strip">
+  <div class="container">
+    <div class="trust-strip-inner">
+      <div class="trust-left">Para ti si</div>
+      <div class="trust-right">
+        Tu ecommerce factura entre <strong>8.000 € y 40.000 € al mes</strong> y empiezas a sentir que el negocio no crece al ritmo de tu esfuerzo.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PROBLEM (DARK) =============== -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-inner">
+
+      <div class="problem-head">
+        <div>
+          <span class="pill pill-dark reveal"><span class="pill-dot"></span>Antes del vídeo, el diagnóstico</span>
+          <h2 class="reveal reveal-delay-1">Si te suena alguna de estas, <span class="blue">no estás solo</span>.</h2>
+        </div>
+        <p class="problem-side reveal reveal-delay-2">
+          Es el patrón que vemos en el <strong>90% de los ecommerce</strong> que superan los 8k al mes. El techo no es económico, es estructural.
+        </p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain reveal">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><polyline points="7 14 11 10 14 13 20 7"/></svg>
+          </div>
+          <h3>Lo que funcionaba hace 6 meses, dejó de funcionar.</h3>
+          <p>Tus anuncios de Meta daban ROAS 3 o 4. De repente el CTR cae, el CPM sube, el coste por venta se dispara — y nadie te sabe explicar por qué.</p>
+        </div>
+
+        <div class="pain reveal reveal-delay-1">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 9l7-7 7 7M5 15l7 7 7-7"/></svg>
+          </div>
+          <h3>Subes presupuesto. Sube el coste por venta.</h3>
+          <p>Esperabas más ventas. Lo único que ha crecido es el CPA. Más inversión no se convierte en más crecimiento cuando el sistema que hay debajo no está construido para absorberla.</p>
+        </div>
+
+        <div class="pain reveal reveal-delay-2">
+          <div class="pain-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>
+          </div>
+          <h3>Meses probando. Mismo número.</h3>
+          <p>Cambias creatividades, mueves audiencias, miras el panel cada mañana. La facturación lleva meses en el mismo rango. El estancamiento no es por falta de esfuerzo — es estructural.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============== SOLUTION =============== -->
+<section class="solution">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="pill"><span class="pill-dot"></span>Qué hay dentro</span>
+      <h2>20 minutos. Los 4 cuellos de botella <span class="blue">del estancamiento</span>.</h2>
+      <p>El mismo diagnóstico que hago con las marcas que entran a trabajar conmigo. Útil tanto si decides contratarnos como si decides aplicarlo tú mismo.</p>
+    </div>
+
+    <div class="solution-meta reveal reveal-delay-1">
+      <div class="sm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span><strong>20 min exactos</strong></span>
+      </div>
+      <div class="sm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>
+        <span><strong>Framework completo</strong></span>
+      </div>
+      <div class="sm-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        <span><strong>Aplicable desde esta semana</strong></span>
+      </div>
+    </div>
+
+    <div class="learn-grid">
+      <article class="learn-card reveal">
+        <div class="learn-header">
+          <div class="learn-num">01</div>
+          <div class="learn-min">min 04 — 06</div>
+        </div>
+        <h3>Fatiga creativa: tu mejor ad muere en 3 semanas.</h3>
+        <p>Por qué duplicar un creativo que funciona no reinicia la fatiga, y qué diferencia una "variante" de un "ángulo nuevo". El error que comete el 80% de las marcas al escalar.</p>
+      </article>
+
+      <article class="learn-card reveal reveal-delay-1">
+        <div class="learn-header">
+          <div class="learn-num">02</div>
+          <div class="learn-min">min 06 — 08</div>
+        </div>
+        <h3>Tu Business Manager no es creativo. Es arquitectura.</h3>
+        <p>La regla de las 50 conversiones por adset en 7 días. Por qué 15 campañas pequeñas rinden la mitad que 3 bien dimensionadas, y qué apagar primero sin perder volumen.</p>
+      </article>
+
+      <article class="learn-card reveal reveal-delay-2">
+        <div class="learn-header">
+          <div class="learn-num">03</div>
+          <div class="learn-min">min 08 — 10</div>
+        </div>
+        <h3>El 90% depende de la primera compra. Ahí no hay margen.</h3>
+        <p>Por qué tu ratio de recompra decide cuánto puedes pagar por adquirir. La ecuación LTV/CAC y la secuencia postventa que mueve el número final sin tocar presupuesto de ads.</p>
+      </article>
+
+      <article class="learn-card reveal reveal-delay-3">
+        <div class="learn-header">
+          <div class="learn-num">04</div>
+          <div class="learn-min">min 10 — 12</div>
+        </div>
+        <h3>Tu landing no está construida para tráfico frío de Meta.</h3>
+        <p>Los 5 elementos que separan una página de producto estándar de una landing que convierte. Y por qué el message match rompe al 90% de las tiendas Shopify que corren ads.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =============== JOURNEY (DARK) =============== -->
+<section class="journey">
+  <div class="container">
+    <div class="journey-inner">
+      <div class="journey-head">
+        <span class="pill pill-dark reveal"><span class="pill-dot"></span>Cómo funciona</span>
+        <h2 class="reveal reveal-delay-1">Tres pasos. <span class="blue">Cero fricción.</span></h2>
+        <p class="reveal reveal-delay-2">Sin descargar nada, sin crear cuentas, sin agendar antes de ver si encaja.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="step-num">01</div>
+          <h3>Dejas tu email.</h3>
+          <p>Un campo, un botón. Nada más. Recibes el acceso al vídeo en tu bandeja en menos de un minuto.</p>
+          <div class="step-meta">30 segundos</div>
+        </div>
+
+        <div class="step reveal reveal-delay-1">
+          <div class="step-num">02</div>
+          <h3>Ves el vídeo cuando quieras.</h3>
+          <p>20 minutos exactos. Puedes verlo entero, saltar al minuto que te interese o descargarlo en audio para el coche.</p>
+          <div class="step-meta">A tu ritmo</div>
+        </div>
+
+        <div class="step reveal reveal-delay-2">
+          <div class="step-num">03</div>
+          <h3>Si tiene sentido, reservas auditoría.</h3>
+          <p>Al final del vídeo tienes un enlace para reservar una auditoría gratuita de tu cuenta. Si no encaja, te quedas con el marco y aplicas lo que viste. Sin presión.</p>
+          <div class="step-meta">Solo si encaja</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== ABOUT · PARTNERSHIP =============== -->
+<section class="about">
+  <div class="container">
+    <div class="about-inner">
+
+      <aside class="quote-card reveal">
+        <div class="quote-label">M1 / Partnership model</div>
+        <div class="quote-body">
+          <blockquote>
+            "No buscamos ser otro proveedor. Buscamos convertirnos en una <span class="blue">parte útil</span> del crecimiento del negocio."
+          </blockquote>
+        </div>
+        <div class="quote-author">
+          <strong>Modou Diaw</strong>
+          <small>Fundador · M1 Media Agency</small>
+        </div>
+      </aside>
+
+      <div class="about-copy reveal reveal-delay-1">
+        <span class="pill"><span class="pill-dot"></span>Quién hay detrás</span>
+        <h2>Menos clientes. <span class="blue">Más implicación.</span></h2>
+        <p>M1 Media no funciona como una agencia que reparte tareas entre departamentos. Entramos en el negocio para entender qué está frenando el crecimiento y conectamos estrategia, adquisición, creatividad, email y datos alrededor de un mismo objetivo.</p>
+        <div class="about-model">
+          <div class="about-model-label">Modelo de colaboración</div>
+          <div class="about-model-text">
+            Abrimos un <strong>número limitado de plazas</strong> cada temporada para poder entrar de verdad en cada cuenta, tomar decisiones con contexto y acompañar la evolución del sistema. No ejecutamos una lista de entregables, construimos un canal de crecimiento junto al fundador.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============== CONTRAST =============== -->
+<section class="contrast">
+  <div class="container">
+    <div class="contrast-inner reveal">
+      <div class="contrast-col">
+        <div class="contrast-label">Lo que no vas a ver</div>
+        <h3>No es otro curso disfrazado.</h3>
+        <ul class="contrast-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            Promesas de "duplicar en 30 días" ni capturas de ingresos sin contexto.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            Plantillas recicladas de "funnels mágicos" vistos mil veces en LinkedIn.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+            Pitch de venta disfrazado de contenido con 15 minutos de intro vacía.
+          </li>
+        </ul>
+      </div>
+      <div class="contrast-col">
+        <div class="contrast-label">Lo que sí vas a ver</div>
+        <h3>Lo que haríamos en tu cuenta.</h3>
+        <ul class="contrast-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            El marco exacto que seguiríamos si entráramos a trabajar contigo mañana.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Las decisiones que tomamos antes de aumentar la inversión en un canal.
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Cómo detectamos si una cuenta tiene techo o si tiene margen para crecer.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FAQ =============== -->
+<section class="faq">
+  <div class="container">
+    <div class="faq-inner">
+      <div class="faq-head">
+        <span class="pill"><span class="pill-dot"></span>Preguntas honestas</span>
+        <h2>Lo que seguramente te estás <span class="blue">preguntando</span>.</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>
+            ¿Es un webinar en directo o un vídeo grabado?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            Grabado. 20 minutos exactos, sin horario y sin plazas limitadas de mentira. Lo abres cuando puedas, lo pausas si necesitas y vuelves al minuto que te interesa.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            ¿Me vais a llamar al día siguiente?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            No. Recibes el vídeo y, durante la semana siguiente, 3 o 4 correos con material extra. <strong>Nada de llamadas sorpresa</strong>. Si quieres hablar, el enlace al calendario está dentro del vídeo. Siempre decides tú.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Mi ecommerce factura menos de 8k al mes. ¿Me vale igual?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            Sí, aunque el marco está pensado para marcas con <strong>ventas estables y margen</strong>. Si estás por debajo, parte del contenido te servirá como anticipo — y si tu caso tiene sentido para nosotros, lo revisamos. <strong>No descartamos a nadie por facturación</strong> sin mirar primero el contexto.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            ¿Qué me vais a ofrecer al final?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            Depende. Antes de proponer nada, el equipo y yo <strong>analizamos tu caso</strong> y decidimos si tu perfil encaja con la metodología. Si encaja, hablamos de cómo entraríamos. Si no, te lo decimos sin rodeos y recomendamos el siguiente paso útil. No hay oferta genérica para todo el mundo.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            Ya he probado agencias. ¿Qué cambia aquí?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span>
+          </summary>
+          <div class="faq-body">
+            La diferencia práctica: <strong>abrimos plazas limitadas por temporada</strong>. No acumulamos clientes para engordar cartera. Trabajamos con el fundador como interlocutor directo, sin juniors, sin plantillas, sin reuniones semanales de relleno. Lo verás en el vídeo.
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FINAL CTA =============== -->
+<section class="final">
+  <div class="container">
+    <div class="final-inner">
+      <span class="pill pill-dark reveal"><span class="pill-dot"></span>Último paso</span>
+      <h2 class="reveal reveal-delay-1">Antes de invertir otro euro en crecer, <span class="blue">mira cómo pensamos</span> nosotros.</h2>
+      <p class="reveal reveal-delay-2">20 minutos de vídeo privado. El mismo marco que compartimos cuando una marca llega hasta aquí. Sin promesas vacías, sin oferta prefabricada.</p>
+
+      <div class="capture reveal reveal-delay-3" id="capture-final">
+        <form class="capture-form" data-form="final" novalidate>
+          <input
+            type="email"
+            name="email"
+            placeholder="Deja tu email"
+            required
+            autocomplete="email"
+            inputmode="email"
+            aria-label="Email"
+          />
+          <button type="submit">
+            Ver el vídeo
+            <span class="arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+        <div class="success-state" data-success="final" role="status">
+          <strong>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Listo. Revisa tu bandeja.
+          </strong>
+          <p>Te hemos enviado el acceso. Si no aparece en 2 minutos, mira en Promociones o Spam.</p>
+        </div>
+      </div>
+
+      <div class="capture-note" style="margin-top:18px;">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+          Acceso inmediato · Sin spam · Baja en 1 clic
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FOOTER =============== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <small>© <span id="year"></span> M1 Media Agency · Hecho con calma en España</small>
+      <nav class="footer-links">
+        <a href="/privacidad">Privacidad</a>
+        <a href="/aviso-legal">Aviso legal</a>
+        <a href="mailto:modou@mail.m1media.es">Contacto</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: .14, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Forms
+  const forms = document.querySelectorAll('.capture-form');
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = form.querySelector('input[type="email"]');
+      const email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        input.focus();
+        form.classList.add('shake');
+        setTimeout(() => form.classList.remove('shake'), 500);
+        return;
+      }
+
+      // TODO: enviar a Klaviyo (API pública) o webhook n8n
+      // fetch('https://a.klaviyo.com/client/subscriptions/?company_id=XXX', { ... });
+
+      const key = form.dataset.form;
+      const container = form.closest('.capture');
+      const success = container.querySelector(`[data-success="${key}"]`);
+      form.classList.add('hidden');
+      success.classList.add('active');
+
+      if (window.fbq) window.fbq('track', 'Lead');
+      if (window.gtag) window.gtag('event', 'generate_lead', { method: 'landing_growth_partner' });
+    });
+  });
+
+  // Scroll-based header hint (optional)
+  // Could toggle header style — left minimal for now.
+</script>
+
+</body>
+</html>
