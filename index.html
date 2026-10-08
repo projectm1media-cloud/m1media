@@ -36,8 +36,8 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
-section[id]{scroll-margin-top:88px;}
-@media (max-width:760px){section[id]{scroll-margin-top:72px;}}
+section[id]{scroll-margin-top:96px;}
+@media (max-width:760px){section[id]{scroll-margin-top:80px;}}
 body{
   font-family:"League Spartan",system-ui,-apple-system,sans-serif;
   color:var(--m1-black);
@@ -67,7 +67,7 @@ input{font-family:inherit;}
   position:fixed;
   top:0;left:0;right:0;
   z-index:50;
-  padding:16px 0;
+  padding:20px 0;
   background:rgba(255,255,255,.78);
   backdrop-filter:saturate(140%) blur(14px);
   -webkit-backdrop-filter:saturate(140%) blur(14px);
@@ -77,7 +77,7 @@ input{font-family:inherit;}
 .site-header.scrolled{
   background:rgba(255,255,255,.92);
   border-bottom-color:var(--m1-border);
-  padding:12px 0;
+  padding:16px 0;
 }
 .site-header .container{
   display:flex;
@@ -88,16 +88,26 @@ input{font-family:inherit;}
 .logo{
   display:inline-flex;
   align-items:center;
-  line-height:0;
+  gap:12px;
+  line-height:1;
   flex-shrink:0;
-}
-.logo-img{
-  height:32px;
-  width:auto;
-  display:block;
   transition:opacity .2s ease;
 }
-.logo:hover .logo-img{opacity:.82;}
+.logo:hover{opacity:.82;}
+.logo-img{
+  height:40px;
+  width:auto;
+  display:block;
+}
+.logo-text{
+  font-family:"League Spartan",sans-serif;
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:.01em;
+  color:var(--m1-black);
+  line-height:1;
+  text-transform:uppercase;
+}
 
 /* NAV central */
 .nav{
@@ -107,7 +117,7 @@ input{font-family:inherit;}
 }
 .nav a{
   position:relative;
-  font-size:14.5px;
+  font-size:15.5px;
   font-weight:500;
   color:var(--m1-black);
   letter-spacing:-.005em;
@@ -131,10 +141,10 @@ input{font-family:inherit;}
   gap:8px;
   background:var(--m1-blue);
   color:#FFFFFF;
-  padding:11px 20px;
-  font-size:14.5px;
+  padding:13px 22px;
+  font-size:15px;
   font-weight:600;
-  border-radius:10px;
+  border-radius:11px;
   box-shadow:0 8px 20px rgba(6,102,243,.22);
   transition:background .2s ease, transform .2s ease, box-shadow .2s ease;
   flex-shrink:0;
@@ -1184,9 +1194,10 @@ h1 .underline::after{
 
 @media (max-width: 760px){
   .container{width:min(calc(100% - 32px), var(--container));}
-  .site-header{padding:14px 0;}
-  .site-header.scrolled{padding:11px 0;}
-  .logo-img{height:28px;}
+  .site-header{padding:18px 0;}
+  .site-header.scrolled{padding:14px 0;}
+  .logo-img{height:36px;}
+  .logo-text{font-size:20px;letter-spacing:.01em;}
   .nav{display:none;}
   .site-header .header-cta{display:none;}
   .nav-toggle{display:inline-flex;align-items:center;}
@@ -1201,8 +1212,8 @@ h1 .underline::after{
   .hero-tag .eyebrow{font-size:11.5px;letter-spacing:.18em;gap:12px;}
   .hero-tag .eyebrow::before{width:28px;height:2px;}
   h1{
-    font-size:clamp(36px,9.6vw,50px);
-    line-height:1.02;
+    font-size:clamp(44px,11.8vw,62px);
+    line-height:.98;
     letter-spacing:-.045em;
   }
   h1 .underline::after{bottom:3px;height:9px;}
@@ -1212,12 +1223,6 @@ h1 .underline::after{
     margin-top:18px;
   }
   .capture{margin-top:26px;}
-  .capture-note{
-    margin-top:14px;
-    gap:10px 16px;
-    font-size:12.5px;
-    justify-content:flex-start;
-  }
   .hero-grid{gap:36px;}
   .capture-form{
     flex-direction:column;
@@ -1233,8 +1238,8 @@ h1 .underline::after{
     box-shadow:none;
   }
   .capture-form input[type="email"]{
-    padding:0 20px;
-    height:60px;
+    padding:0 18px;
+    height:56px;
     width:100%;
     font-size:16px;
     font-weight:500;
@@ -1242,34 +1247,39 @@ h1 .underline::after{
     background:#FFFFFF;
     color:var(--m1-black);
     border:1.5px solid var(--m1-border);
-    border-radius:14px;
-    box-shadow:0 6px 20px rgba(10,10,10,.05);
+    border-radius:12px;
+    box-shadow:0 4px 14px rgba(10,10,10,.04);
     transition:border-color .2s ease, box-shadow .2s ease;
   }
   .capture-form input[type="email"]:focus{
     border-color:var(--m1-blue);
-    box-shadow:0 10px 24px rgba(6,102,243,.16);
+    box-shadow:0 8px 20px rgba(6,102,243,.14);
   }
   .capture-form input[type="email"]::placeholder{color:#6C717A;font-weight:500;}
   .capture-form button{
-    height:60px;
+    height:56px;
     width:100%;
     justify-content:center;
     gap:10px;
     font-size:16px;
     font-weight:650;
-    border-radius:14px;
-    box-shadow:0 14px 32px rgba(6,102,243,.32);
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(6,102,243,.22);
     position:relative;
     overflow:hidden;
   }
-  .capture-form button::after{
-    content:"";
-    position:absolute;inset:0;
-    background:linear-gradient(135deg, rgba(255,255,255,.14), rgba(255,255,255,0) 60%);
-    pointer-events:none;
+  .capture-form button::after{display:none;}
+  /* Checkmarks: fila ordenada y respirada en móvil */
+  .capture-note{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+    align-items:center;
+    gap:8px 16px;
+    margin-top:16px;
+    font-size:12.5px;
   }
-  .capture-note{gap:14px;}
+  .capture-note span{font-size:12.5px;}
 
   /* Trust strip: dos líneas limpias con jerarquía */
   .trust-strip{padding:18px 0;}
@@ -1400,11 +1410,12 @@ h1 .underline::after{
 @media (max-width: 420px){
   .container{width:min(calc(100% - 28px), var(--container));}
   .hero{padding:102px 0 64px;}
-  h1{font-size:clamp(32px,9.5vw,44px);letter-spacing:-.04em;}
+  h1{font-size:clamp(40px,11.5vw,54px);letter-spacing:-.04em;}
   .hero-sub{font-size:15.5px;}
-  .capture-form input[type="email"]{height:60px;font-size:16px;padding:0 18px;}
-  .capture-form button{height:60px;font-size:15.5px;}
-  .capture-note{gap:10px 16px;font-size:12px;}
+  .capture-form input[type="email"]{height:54px;font-size:16px;padding:0 16px;}
+  .capture-form button{height:54px;font-size:15.5px;}
+  .capture-note{gap:8px;font-size:11.5px;}
+  .capture-note span{font-size:11.5px;}
 
   .trust-right{font-size:13.5px;}
   .problem-head h2{letter-spacing:-.035em;}
@@ -1443,50 +1454,6 @@ h1 .underline::after{
   .final{padding-bottom:max(96px, calc(96px + env(safe-area-inset-bottom)));}
 }
 
-/* ============================
-   STICKY MOBILE CTA — siempre accesible
-============================ */
-.sticky-cta{
-  position:fixed;
-  left:14px;right:14px;
-  bottom:14px;
-  z-index:45;
-  pointer-events:none;
-  opacity:0;
-  transform:translateY(140%);
-  transition:opacity .3s ease, transform .4s cubic-bezier(.2,.75,.2,1);
-  display:none;
-}
-.sticky-cta.show{
-  opacity:1;
-  transform:translateY(0);
-  pointer-events:auto;
-}
-.sticky-cta a{
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--m1-blue);
-  color:#FFFFFF;
-  padding:16px 22px;
-  border-radius:14px;
-  font-weight:650;
-  font-size:16px;
-  letter-spacing:-.005em;
-  box-shadow:
-    0 18px 40px rgba(6,102,243,.42),
-    0 2px 10px rgba(10,10,10,.12),
-    0 0 0 4px rgba(255,255,255,.6);
-  backdrop-filter:blur(2px);
-}
-.sticky-cta a .arrow{transition:transform .2s ease;}
-.sticky-cta a:active .arrow{transform:translateX(3px);}
-@media (max-width: 760px){
-  .sticky-cta{
-    display:block;
-    bottom:max(14px, calc(14px + env(safe-area-inset-bottom)));
-  }
-  /* Reserva espacio al final para que el sticky CTA no tape el footer */
-  body.sticky-active .site-footer{padding-bottom:calc(28px + 80px + env(safe-area-inset-bottom,0));}
-}
 
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{
@@ -1502,7 +1469,8 @@ h1 .underline::after{
 <header class="site-header">
   <div class="container">
     <a href="/" class="logo" aria-label="M1 Media">
-      <img src="logo.png" alt="M1 Media" class="logo-img" />
+      <img src="logo-icon.png" alt="" class="logo-img" />
+      <span class="logo-text">M1 Media</span>
     </a>
 
     <nav class="nav" aria-label="Navegación principal">
@@ -1550,7 +1518,7 @@ h1 .underline::after{
         </div>
 
         <h1>
-          No es el presupuesto. Es <span class="blue underline">el sistema</span>.
+          Tu ecommerce no crece. Y <span class="blue underline">no es tu culpa</span>.
         </h1>
 
         <p class="hero-sub">
@@ -1727,16 +1695,16 @@ h1 .underline::after{
           <div class="pain-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><polyline points="7 14 11 10 14 13 20 7"/></svg>
           </div>
-          <h3>Lo que funcionaba hace 6 meses, dejó de funcionar.</h3>
-          <p>Tus anuncios de Meta daban ROAS 3 o 4. De repente el CTR cae, el CPM sube, el coste por venta se dispara — y nadie te sabe explicar por qué.</p>
+          <h3>Lo que funcionaba, dejó de funcionar.</h3>
+          <p>Mismo anuncio, mismo producto, mismo público. Y los números ya no cuadran. Nadie te sabe decir por qué.</p>
         </div>
 
         <div class="pain reveal reveal-delay-1">
           <div class="pain-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 9l7-7 7 7M5 15l7 7 7-7"/></svg>
           </div>
-          <h3>Subes presupuesto. Sube el coste por venta.</h3>
-          <p>Esperabas más ventas. Lo único que ha crecido es el CPA. Más inversión no se convierte en más crecimiento cuando el sistema que hay debajo no está construido para absorberla.</p>
+          <h3>Más presupuesto. Mismo resultado.</h3>
+          <p>Subes la inversión esperando ventas. Lo que sube es el coste. Hay algo debajo que no está preparado para absorberlo.</p>
         </div>
 
         <div class="pain reveal reveal-delay-2">
@@ -1744,7 +1712,7 @@ h1 .underline::after{
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg>
           </div>
           <h3>Meses probando. Mismo número.</h3>
-          <p>Cambias creatividades, mueves audiencias, miras el panel cada mañana. La facturación lleva meses en el mismo rango. El estancamiento no es por falta de esfuerzo — es estructural.</p>
+          <p>Cambias creatividades, mueves audiencias, miras el panel cada día. La facturación no se mueve. No es falta de esfuerzo.</p>
         </div>
       </div>
 
@@ -1782,8 +1750,8 @@ h1 .underline::after{
           <div class="learn-num">01</div>
           <div class="learn-min">min 04 — 06</div>
         </div>
-        <h3>Fatiga creativa: tu mejor ad muere en 3 semanas.</h3>
-        <p>Por qué duplicar un creativo que funciona no reinicia la fatiga, y qué diferencia una "variante" de un "ángulo nuevo". El error que comete el 80% de las marcas al escalar.</p>
+        <h3>Por qué tu mejor ad deja de funcionar en 3 semanas.</h3>
+        <p>Y qué hacer antes de que pase. Pista: no es duplicar.</p>
       </article>
 
       <article class="learn-card reveal reveal-delay-1">
@@ -1791,8 +1759,8 @@ h1 .underline::after{
           <div class="learn-num">02</div>
           <div class="learn-min">min 06 — 08</div>
         </div>
-        <h3>Tu Business Manager no es creativo. Es arquitectura.</h3>
-        <p>La regla de las 50 conversiones por adset en 7 días. Por qué 15 campañas pequeñas rinden la mitad que 3 bien dimensionadas, y qué apagar primero sin perder volumen.</p>
+        <h3>La estructura de cuenta que casi nadie tiene bien.</h3>
+        <p>Cómo saber si tu Business Manager te está frenando sin que lo notes.</p>
       </article>
 
       <article class="learn-card reveal reveal-delay-2">
@@ -1800,8 +1768,8 @@ h1 .underline::after{
           <div class="learn-num">03</div>
           <div class="learn-min">min 08 — 10</div>
         </div>
-        <h3>El 90% depende de la primera compra. Ahí no hay margen.</h3>
-        <p>Por qué tu ratio de recompra decide cuánto puedes pagar por adquirir. La ecuación LTV/CAC y la secuencia postventa que mueve el número final sin tocar presupuesto de ads.</p>
+        <h3>El número que decide cuánto puedes pagar por venta.</h3>
+        <p>Si lo tienes bajo, los ads nunca van a cerrar. Y nadie te lo dice.</p>
       </article>
 
       <article class="learn-card reveal reveal-delay-3">
@@ -1809,8 +1777,8 @@ h1 .underline::after{
           <div class="learn-num">04</div>
           <div class="learn-min">min 10 — 12</div>
         </div>
-        <h3>Tu landing no está construida para tráfico frío de Meta.</h3>
-        <p>Los 5 elementos que separan una página de producto estándar de una landing que convierte. Y por qué el message match rompe al 90% de las tiendas Shopify que corren ads.</p>
+        <h3>Tu landing no está hecha para tráfico frío. Punto.</h3>
+        <p>Los 5 elementos que la separan de una página que convierte de verdad.</p>
       </article>
     </div>
   </div>
@@ -1830,21 +1798,21 @@ h1 .underline::after{
         <div class="step reveal">
           <div class="step-num">01</div>
           <h3>Dejas tu email.</h3>
-          <p>Un campo, un botón. Nada más. Recibes el acceso al vídeo en tu bandeja en menos de un minuto.</p>
+          <p>Un campo. El acceso llega a tu bandeja en menos de un minuto.</p>
           <div class="step-meta">30 segundos</div>
         </div>
 
         <div class="step reveal reveal-delay-1">
           <div class="step-num">02</div>
           <h3>Ves el vídeo cuando quieras.</h3>
-          <p>20 minutos exactos. Puedes verlo entero, saltar al minuto que te interese o descargarlo en audio para el coche.</p>
+          <p>20 minutos. Lo pausas, lo saltas, lo revisas. Como te vaya mejor.</p>
           <div class="step-meta">A tu ritmo</div>
         </div>
 
         <div class="step reveal reveal-delay-2">
           <div class="step-num">03</div>
-          <h3>Si tiene sentido, reservas auditoría.</h3>
-          <p>Al final del vídeo tienes un enlace para reservar una auditoría gratuita de tu cuenta. Si no encaja, te quedas con el marco y aplicas lo que viste. Sin presión.</p>
+          <h3>Si tiene sentido, hablamos.</h3>
+          <p>Al final hay un enlace para auditoría. Si no encaja, te quedas el marco. Sin presión.</p>
           <div class="step-meta">Solo si encaja</div>
         </div>
       </div>
@@ -2037,14 +2005,6 @@ h1 .underline::after{
   </div>
 </section>
 
-<!-- Sticky mobile CTA -->
-<div class="sticky-cta" id="stickyCta" aria-hidden="true">
-  <a href="#capture-hero">
-    Deja tu email y mira el vídeo
-    <span class="arrow" aria-hidden="true">→</span>
-  </a>
-</div>
-
 <!-- =============== FOOTER =============== -->
 <footer class="site-footer">
   <div class="container">
@@ -2053,7 +2013,8 @@ h1 .underline::after{
       <nav class="footer-links">
         <a href="/privacidad">Privacidad</a>
         <a href="/aviso-legal">Aviso legal</a>
-        <a href="mailto:modou@mail.m1media.es">Contacto</a>
+        <a href="/cookies">Cookies</a>
+        <a href="mailto:info@m1media.es">Contacto</a>
       </nav>
     </div>
   </div>
@@ -2107,6 +2068,18 @@ h1 .underline::after{
 
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+  // FAQ accordion exclusivo: solo una pregunta abierta a la vez
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    item.addEventListener('toggle', () => {
+      if (item.open) {
+        faqItems.forEach(other => {
+          if (other !== item && other.open) other.open = false;
+        });
+      }
+    });
+  });
+
   // Forms
   const forms = document.querySelectorAll('.capture-form');
   forms.forEach(form => {
@@ -2135,31 +2108,6 @@ h1 .underline::after{
     });
   });
 
-  // Sticky mobile CTA — aparece cuando el formulario del hero deja de verse
-  // y se oculta al llegar al CTA final (para no competir con el formulario on-screen)
-  const stickyCta = document.getElementById('stickyCta');
-  const heroCapture = document.getElementById('capture-hero');
-  const finalCapture = document.getElementById('capture-final');
-  if (stickyCta && heroCapture && finalCapture){
-    let heroInView = true;
-    let finalInView = false;
-    const sync = () => {
-      const show = !heroInView && !finalInView;
-      stickyCta.classList.toggle('show', show);
-      stickyCta.setAttribute('aria-hidden', String(!show));
-      document.body.classList.toggle('sticky-active', show);
-    };
-    const heroIo = new IntersectionObserver((entries) => {
-      heroInView = entries[0].isIntersecting;
-      sync();
-    }, { threshold: 0.08 });
-    const finalIo = new IntersectionObserver((entries) => {
-      finalInView = entries[0].isIntersecting;
-      sync();
-    }, { threshold: 0.12 });
-    heroIo.observe(heroCapture);
-    finalIo.observe(finalCapture);
-  }
 </script>
 
 </body>
