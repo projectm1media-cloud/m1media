@@ -300,11 +300,12 @@ input{font-family:inherit;}
 
 h1{
   font-family:"League Spartan",sans-serif;
-  font-size:clamp(44px,5.4vw,74px);
-  line-height:.90;
+  font-size:clamp(38px,4.6vw,58px);
+  line-height:.98;
   letter-spacing:-.045em;
   font-weight:650;
   color:var(--m1-black);
+  white-space:nowrap;
   opacity:0;transform:translateY(20px);
   animation:fadeUp .72s cubic-bezier(.2,.75,.25,1) .18s forwards;
 }
@@ -1232,9 +1233,9 @@ h1 .underline::after{
   .hero-tag .eyebrow{font-size:11.5px;letter-spacing:.18em;gap:12px;}
   .hero-tag .eyebrow::before{width:28px;height:2px;}
   h1{
-    font-size:clamp(44px,11.8vw,62px);
-    line-height:.98;
-    letter-spacing:-.045em;
+    font-size:clamp(28px,7.6vw,38px);
+    line-height:1.02;
+    letter-spacing:-.04em;
   }
   h1 .underline::after{bottom:3px;height:9px;}
   .hero-sub{
@@ -1459,7 +1460,7 @@ h1 .underline::after{
 @media (max-width: 420px){
   .container{width:min(calc(100% - 28px), var(--container));}
   .hero{padding:102px 0 64px;}
-  h1{font-size:clamp(40px,11.5vw,54px);letter-spacing:-.04em;}
+  h1{font-size:clamp(26px,7.4vw,32px);letter-spacing:-.035em;}
   .hero-sub{font-size:15.5px;}
   .capture-form input[type="email"],
   .capture-form button{
@@ -1576,7 +1577,7 @@ h1 .underline::after{
         </div>
 
         <h1>
-          Si tu tienda no crece<br>
+          Si tu tienda no crece,<br>
           hay un motivo.<br>
         <span class="blue underline">Y no es el que crees</span>.
         </h1>
@@ -2055,14 +2056,22 @@ h1 .underline::after{
         </div>
       </div>
 
-      <div class="capture-note" style="margin-top:18px;">
-        <span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-          Acceso inmediato · Sin spam · Baja en 1 clic
-        </span>
+      <div class="capture-note">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Acceso inmediato
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Sin spam
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            Baja en 1 clic
+          </span>
+        </div>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- =============== FOOTER =============== -->
