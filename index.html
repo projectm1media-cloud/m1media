@@ -1120,8 +1120,19 @@ h1 .underline::after{
 .final .capture{margin:40px auto 0;}
 .final .capture-form{
   margin:0 auto;
-  background:#FFFFFF;
+  background:transparent;
+  border-color:rgba(255,255,255,.14);
+  box-shadow:0 10px 40px rgba(0,0,0,.3);
 }
+.final .capture-form:focus-within{
+  border-color:var(--m1-blue-light);
+  box-shadow:0 10px 40px rgba(6,102,243,.25);
+}
+.final .capture-form input[type="email"]{
+  background:transparent;
+  color:#FFFFFF;
+}
+.final .capture-form input[type="email"]::placeholder{color:rgba(255,255,255,.5);}
 .final .capture-note{
   justify-content:center;color:rgba(255,255,255,.5);
 }
@@ -1402,6 +1413,19 @@ h1 .underline::after{
   .final p{font-size:15.5px;margin-top:16px;}
   .final .capture{margin-top:28px;}
   .final .capture-form{flex-direction:column;}
+  /* Input del CTA final en móvil: fondo transparente con el oscuro de la sección */
+  .final .capture-form input[type="email"]{
+    background:rgba(255,255,255,.04);
+    color:#FFFFFF;
+    border-color:rgba(255,255,255,.14);
+    box-shadow:none;
+  }
+  .final .capture-form input[type="email"]:focus{
+    border-color:var(--m1-blue-light);
+    background:rgba(255,255,255,.06);
+    box-shadow:0 4px 14px rgba(6,102,243,.2);
+  }
+  .final .capture-form input[type="email"]::placeholder{color:rgba(255,255,255,.5);}
   .final .capture-note{
     justify-content:center;
     margin-top:14px !important;
@@ -1552,8 +1576,9 @@ h1 .underline::after{
         </div>
 
         <h1>
+          Si tu tienda no crece,<br>
           Hay un motivo.<br>
-          Y <span class="blue underline">no es el que piensas</span>.
+        <span class="blue underline">Yno es el que crees</span>.
         </h1>
 
         <p class="hero-sub">
