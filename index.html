@@ -334,66 +334,110 @@ h1 .underline::after{
 }
 .hero-sub strong{color:var(--m1-black);font-weight:600;}
 
-/* FORM */
-.capture{
-  margin-top:34px;
-  opacity:0;transform:translateY(16px);
-  animation:fadeUp .66s ease .46s forwards;
+.capture {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
 }
-.capture-form{
-  display:flex;
-  gap:8px;
-  background:#FFFFFF;
-  border:1px solid var(--m1-border);
-  border-radius:12px;
-  padding:7px;
-  max-width:520px;
-  box-shadow:0 10px 30px rgba(10,10,10,.05);
-  transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
-}
-.capture-form:focus-within{
-  border-color:var(--m1-blue);
-  box-shadow:0 10px 30px rgba(6,102,243,.14);
-}
-.capture-form.shake{animation:shake .4s ease;}
-.capture-form input[type="email"]{
-  flex:1;min-width:0;
-  background:transparent;border:0;outline:0;
-  padding:0 14px;
-  height:50px;
-  font-size:15px;
-  color:var(--m1-black);
-}
-.capture-form input::placeholder{color:#6C717A;font-weight:500;}
-.capture-form button{
-  height:50px;
-  padding:0 22px;
-  background:var(--m1-blue);
-  color:#FFFFFF;
-  font-weight:600;font-size:15px;
-  border-radius:8px;
-  display:inline-flex;align-items:center;gap:8px;
-  white-space:nowrap;
-  transition:background .2s ease, transform .2s ease, box-shadow .2s ease;
-}
-.capture-form button:hover{
-  background:var(--m1-blue-dark);
-  box-shadow:0 10px 24px rgba(6,102,243,.28);
-  transform:translateY(-1px);
-}
-.capture-form button:active{transform:translateY(0);}
-.capture-form .arrow{transition:transform .2s ease;}
-.capture-form button:hover .arrow{transform:translateX(3px);}
 
-.capture-note{
-  margin-top:16px;
-  display:flex;align-items:center;gap:18px;
-  font-size:13px;color:var(--m1-gray);
-  flex-wrap:wrap;
+.capture-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
 }
-.capture-note span{display:inline-flex;align-items:center;gap:6px;}
-.capture-note svg{width:14px;height:14px;color:var(--m1-success);}
 
+.capture-form input,
+.capture-form button {
+  box-sizing: border-box;
+  width: 100%;
+  height: 64px;
+  border-radius: 32px;
+  font-family: inherit;
+}
+
+/* INPUT */
+.capture-form input {
+  padding: 0 28px;
+  border: 2px solid #dfe3e8;
+  background: #fff;
+  color: #1f2937;
+  font-size: 20px;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.capture-form input::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+.capture-form input:focus {
+  border-color: #2878f0;
+  box-shadow: 0 0 0 4px rgba(40, 120, 240, 0.1);
+}
+
+/* BOTÓN */
+.capture-form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  padding: 0 28px;
+  border: none;
+  background: #1769ed;
+  color: #fff;
+
+  font-size: 21px;
+  font-weight: 700;
+  cursor: pointer;
+
+  box-shadow: 0 12px 30px rgba(23, 105, 237, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.capture-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(23, 105, 237, 0.28);
+}
+
+.capture-form button:active {
+  transform: translateY(0);
+}
+
+.capture-form .arrow {
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .capture-form {
+    gap: 10px;
+  }
+
+  .capture-form input,
+  .capture-form button {
+    height: 58px;
+    border-radius: 29px;
+  }
+
+  .capture-form input {
+    font-size: 17px;
+    padding: 0 22px;
+  }
+
+  .capture-form button {
+    font-size: 18px;
+  }
+
+  .capture-form .arrow {
+    font-size: 27px;
+  }
+}
 .success-state{
   display:none;
   background:var(--m1-blue-soft);
@@ -1530,29 +1574,40 @@ h1 .underline::after{
         </p>
 
         <div class="capture" id="capture-hero">
-          <form class="capture-form" data-form="hero" novalidate>
-            <input
-              type="email"
-              name="email"
-              placeholder="Deja tu email"
-              required
-              autocomplete="email"
-              inputmode="email"
-              aria-label="Email"
-            />
-            <button type="submit">
-              Ver el vídeo
-              <span class="arrow" aria-hidden="true">→</span>
-            </button>
-          </form>
-          <div class="success-state" data-success="hero" role="status">
-            <strong>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-              Listo. Revisa tu bandeja.
-            </strong>
-            <p>Te hemos enviado el acceso. Si no aparece en 2 minutos, mira en Promociones o Spam.</p>
-          </div>
-        </div>
+  <form class="capture-form" data-form="hero" novalidate>
+    
+    <input
+      type="email"
+      name="email"
+      placeholder="Deja tu email"
+      required
+      autocomplete="email"
+      inputmode="email"
+      aria-label="Email"
+    />
+
+    <button type="submit">
+      <span>Ver el vídeo</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </button>
+
+  </form>
+
+  <div class="success-state" data-success="hero" role="status">
+    <strong>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+      Listo. Revisa tu bandeja.
+    </strong>
+
+    <p>
+      Te hemos enviado el acceso. Si no aparece en 2 minutos,
+      mira en Promociones o Spam.
+    </p>
+  </div>
+</div>
 
         <div class="capture-note">
           <span>
@@ -1998,7 +2053,41 @@ h1 .underline::after{
           <p>Te hemos enviado el acceso. Si no aparece en 2 minutos, mira en Promociones o Spam.</p>
         </div>
       </div>
+<div class="capture" id="capture-hero">
+  <form class="capture-form" data-form="hero" novalidate>
+    
+    <input
+      type="email"
+      name="email"
+      placeholder="Deja tu email"
+      required
+      autocomplete="email"
+      inputmode="email"
+      aria-label="Email"
+    />
 
+    <button type="submit">
+      <span>Ver el vídeo</span>
+      <span class="arrow" aria-hidden="true">→</span>
+    </button>
+
+  </form>
+
+  <div class="success-state" data-success="hero" role="status">
+    <strong>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+        stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+      Listo. Revisa tu bandeja.
+    </strong>
+
+    <p>
+      Te hemos enviado el acceso. Si no aparece en 2 minutos,
+      mira en Promociones o Spam.
+    </p>
+  </div>
+</div>
       <div class="capture-note" style="margin-top:18px;">
         <span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
